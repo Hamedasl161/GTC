@@ -1,0 +1,179 @@
+sudo apt update && sudo apt upgrade -y
+ ---------------------------------------------------- ---------------------
+apt install ufw -y 
+ufw allow ssh 
+ufw allow https 
+ufw allow http 
+ufw allow 30333
+ufw allow 8078
+ufw enable
+
+#Firewall is active and enabled on system startup
+ ---------------------------------------------------- ---------------------
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL repo.chainflip.io/keys/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/chainflip.gpg
+ ---------------------------------------------------- ---------------------
+gpg --show-keys /etc/apt/keyrings/chainflip.gpg
+ ---------------------------------------------------- ---------------------
+echo "deb [signed-by=/etc/apt/keyrings/chainflip.gpg] https://repo.chainflip.io/perseverance/ focal main" | sudo tee /etc/apt/sources.list.d/chainflip.list
+ ---------------------------------------------------- ---------------------
+sudo apt-get update
+sudo apt-get install -y chainflip-cli chainflip-node chainflip-engine
+ ---------------------------------------------------- ---------------------
+sudo mkdir /etc/chainflip/keys
+ ---------------------------------------------------- ---------------------
+echo -n "xxxxxxxxxxxxxx" |  sudo tee /etc/chainflip/keys/ethereum_key_file
+f474e9d12e3b5dbccb1578a9d251b0e60eff660c0ce6b29798de1bcd6c5a9ecc
+
+echo -n "f474e9d12e3b5dbccb1578a9d251b0e60eff660c0ce6b29798de1bcd6c5a9ecc" |  sudo tee /etc/chainflip/keys/ethereum_key_file
+ ---------------------------------------------------- ---------------------
+chainflip-node key generate
+
+#Copy all to notepad
+
+Secret phrase:       oblige economy fiscal pill boy solar sister august enroll casual nothing toss
+  Network ID:        2112
+  Secret seed:       0xbc2a2ce64011d8cdafecb8558a43137180c131a308b1c2f721af6c42a1c04e28
+  Public key (hex):  0x0879c23aebb0c966e398917a289c5675d73f27ebdd954ba08154e1d8dbe9072f
+  Account ID:        0x0879c23aebb0c966e398917a289c5675d73f27ebdd954ba08154e1d8dbe9072f
+  Public key (SS58): cFJ4bP66QTzsVhMmKSWrnQ6N37172vzfTGgrN98SfJDxh2e5d
+  SS58 Address:      cFJ4bP66QTzsVhMmKSWrnQ6N37172vzfTGgrN98SfJDxh2e5d
+ ---------------------------------------------------- ---------------------
+SECRET_SEED=0xbc2a2ce64011d8cdafecb8558a43137180c131a308b1c2f721af6c42a1c04e28
+ ---------------------------------------------------- ---------------------
+echo -n "${SECRET_SEED:2}" | sudo tee /etc/chainflip/keys/signing_key_file
+ ---------------------------------------------------- ---------------------
+sudo chainflip-node key generate-node-key --file /etc/chainflip/keys/node_key_file
+
+#Address Saved!
+
+12D3KooWAe266cDE8J9KkxqwwXJ5oH2h1XGaosjjt2gtrkQ1cBrX
+
+12D3KooWSAPvkW9AoqSB5w47YKvTW715PXXzEkzU6bSNKedht7vy
+
+12D3KooWNjV8g9Nde522yEJj4ujKiUCmrxRFeCaVLCdSdcSKeSRC
+ ---------------------------------------------------- ---------------------
+cat /etc/chainflip/keys/node_key_file
+ ---------------------------------------------------- ---------------------
+sudo chmod 600 /etc/chainflip/keys/ethereum_key_file
+sudo chmod 600 /etc/chainflip/keys/signing_key_file
+sudo chmod 600 /etc/chainflip/keys/node_key_file
+history -c
+ ---------------------------------------------------- ---------------------
+sudo mkdir -p /etc/chainflip/config
+sudo nano /etc/chainflip/config/Default.toml
+ ---------------------------------------------------- ---------------------
+# Default configurations for the CFE
+[node_p2p]
+node_key_file = "/etc/chainflip/keys/node_key_file"
+ip_address="194.35.120.228"
+port = "8078"
+
+[state_chain]
+ws_endpoint = "ws://127.0.0.1:9944"
+signing_key_file = "/etc/chainflip/keys/signing_key_file"
+
+[eth]
+# Ethereum RPC endpoints (websocket and http for redundancy).
+ws_node_endpoint = "wss://eth-goerli.g.alchemy.com/v2/GIKzasJMCpFC4yiKSdjYwKGIrV44U39l"
+http_node_endpoint = "https://eth-goerli.g.alchemy.com/v2/GIKzasJMCpFC4yiKSdjYwKGIrV44U39l"
+
+# Ethereum private key file path. This file should contain a hex-encoded private key.
+private_key_file = "/etc/chainflip/keys/ethereum_key_file"
+
+[signing]
+db_file = "/etc/chainflip/data.db"
+
+1- Ctrl + x
+2- y
+3- Enter
+ ---------------------------------------------------- ---------------------
+sudo systemctl start chainflip-node
+ ---------------------------------------------------- ---------------------
+sudo systemctl status chainflip-node
+
+#Active (Running)
+
+Ctrl + c
+ ---------------------------------------------------- ---------------------
+tail -f /var/log/chainflip-node.log
+
+⚙️ Syncing 105.0 bps, target=#10997, best: #10557 (0x97d4…f396), finalized: #10245 (0xb6b0…1551), ⬇ 1.4kiB/s ⬆ 1.2kiB/s
+
+#💤 Idle (15 peers), best: #3578 (0xcf9a…d842), finalized #3576 (0x6a0e…03fe), ⬇ 27.0kiB/s ⬆ 25.5kiB/s 
+✨ Imported #3579 (0xa931…c03e)
+
+Ctrl + c
+ ---------------------------------------------------- ---------------------
+sudo systemctl start chainflip-engine
+ ---------------------------------------------------- ---------------------
+sudo systemctl status chainflip-engine
+
+#Active (Running)
+ ---------------------------------------------------- ---------------------
+sudo systemctl enable chainflip-node
+ ---------------------------------------------------- ---------------------
+sudo systemctl enable chainflip-engine
+ ---------------------------------------------------- ---------------------
+tail -f /var/log/chainflip-engine.log
+
+Ctrl + c
+ ---------------------------------------------------- ---------------------
+logrotate
+ ---------------------------------------------------- ---------------------
+sudo nano /etc/logrotate.d/chainflip
+ ---------------------------------------------------- ---------------------
+/var/log/chainflip-*.log {
+  rotate 7
+  daily
+  dateext
+  dateformat -%Y-%m-%d
+  missingok
+  notifempty
+  copytruncate
+  nocompress
+}
+
+1- Ctrl + x
+2- y
+3- Enter
+ ---------------------------------------------------- ---------------------
+sudo chmod 644 /etc/logrotate.d/chainflip
+sudo chown root.root /etc/logrotate.d/chainflip
+ ---------------------------------------------------- ---------------------
+Go to https://stake-perseverance.chainflip.io/auctions
+
+1- Connect Wallet
+2- Add Node
+3- Public key (SS58): cFXXX # This is your Validator ID. Make sure you have it handy for staking.
+ ---------------------------------------------------- ---------------------
+sudo systemctl restart chainflip-engine
+ ---------------------------------------------------- ---------------------
+tail -f /var/log/chainflip-engine.log
+ ---------------------------------------------------- ---------------------
+sudo chainflip-cli \
+      --config-path /etc/chainflip/config/Default.toml \
+      register-account-role Validator
+
+1- y
+2- Enter
+3- Copy tx
+
+#Account role set at tx 0xe76574380865dc2a10a7d61eaa0c7046249d26f8d4ca0f84cccbdfeba6f39355.
+ ---------------------------------------------------- ---------------------
+sudo chainflip-cli \
+    --config-path /etc/chainflip/config/Default.toml \
+    activate
+
+#Account activated at tx 0x52bc8d59c5c5f08d71d9cb6790f2d2fc3b7d03fd530b45a38fc8466cff342ebd.
+ ---------------------------------------------------- ---------------------
+sudo chainflip-cli \
+    --config-path /etc/chainflip/config/Default.toml rotate
+
+#Session key rotated at tx 0x4ba929a5d88e98bccf207434a501748ea37f4206f5faf7319782dd98ae07fc27.
+ ---------------------------------------------------- ---------------------
+sudo chainflip-cli \
+    --config-path /etc/chainflip/config/Default.toml \
+    vanity-name Fahima
+
+#Vanity name set at tx 0xc9d30a127bb84b70ab90fded27677a510085f5dac7d0074dd41019d159d51bff.
