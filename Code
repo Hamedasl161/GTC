@@ -8,7 +8,7 @@ ufw allow 30333
 ufw allow 8078
 ufw enable
 
-#Firewall is active and enabled on system startup!
+#Firewall is active and enabled on system startup! Ok
 
 #Show up message!
  ---------------------------------------------------- ---------------------
