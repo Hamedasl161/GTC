@@ -84,7 +84,7 @@ private_key_file = "/etc/chainflip/keys/ethereum_key_file"
 [signing]
 db_file = "/etc/chainflip/data.db"
 
-1- Ctrl + x
+1- Ctrl + c
 2- y
 3- Enter
  ---------------------------------------------------- ---------------------
