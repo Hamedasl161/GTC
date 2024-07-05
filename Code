@@ -17,6 +17,7 @@ curl -fsSL repo.chainflip.io/keys/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/
 echo "deb [signed-by=/etc/apt/keyrings/chainflip.gpg] https://repo.chainflip.io/perseverance/ focal main" | sudo tee /etc/apt/sources.list.d/chainflip.list
  ---------------------------------------------------- ---------------------
 sudo apt-get update
+
 sudo apt-get install -y chainflip-cli chainflip-node chainflip-engine
  ---------------------------------------------------- ---------------------
 sudo mkdir /etc/chainflip/keys
