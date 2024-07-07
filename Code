@@ -95,7 +95,6 @@ sudo systemctl status chainflip-node
 
 Ctrl + c
 Ctrl + P
-Ctrl + V
  ---------------------------------------------------- ---------------------
 tail -f /var/log/chainflip-node.log
 
