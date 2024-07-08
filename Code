@@ -57,7 +57,7 @@ cat /etc/chainflip/keys/node_key_file
 sudo chmod 600 /etc/chainflip/keys/ethereum_key_file
 sudo chmod 600 /etc/chainflip/keys/signing_key_file
 sudo chmod 600 /etc/chainflip/keys/node_key_file
-history -c
+
  ---------------------------------------------------- ---------------------
 sudo mkdir -p /etc/chainflip/config
 sudo nano /etc/chainflip/config/Default.toml
