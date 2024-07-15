@@ -171,7 +171,7 @@ sudo chainflip-cli \
     --config-path /etc/chainflip/config/Default.toml rotate
 
 #Session key rotated at tx 0x4ba929a5d88e98bccf207434a501748ea37f4206f5faf7319782dd98ae07fc27.
-#Private
+
  ---------------------------------------------------- ---------------------
 sudo chainflip-cli \
     --config-path /etc/chainflip/config/Default.toml \
