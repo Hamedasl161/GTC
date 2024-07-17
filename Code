@@ -28,7 +28,7 @@ echo -n "f474e9d12e3b5dbccb1578a9d251b0e60eff660c0ce6b29798de1bcd6c5a9ecc" |  su
  ---------------------------------------------------- ---------------------
 chainflip-node key generate
 
-#Copy all to notepad
+
 
 Secret phrase:       oblige economy fiscal pill boy solar sister august enroll casual nothing toss
   Network ID:        2112
