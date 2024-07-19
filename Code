@@ -84,7 +84,9 @@ private_key_file = "/etc/chainflip/keys/ethereum_key_file"
 db_file = "/etc/chainflip/data.db"
 
 1- Ctrl + v
-2- Enter
+2- Entersudo apt-get update
+
+
  ---------------------------------------------------- ---------------------
 sudo systemctl start chainflip-node
  ---------------------------------------------------- ---------------------
