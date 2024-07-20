@@ -161,6 +161,8 @@ sudo chainflip-cli \
 3- Copy tx
 4- Enter [name]
 #Account role set at tx 0xe76574380865dc2a10a7d61eaa0c7046249d26f8d4ca0f84cccbdfeba6f39355.
+
+#Address Copied!
  ---------------------------------------------------- ---------------------
 sudo chainflip-cli \
     --config-path /etc/chainflip/config/Default.toml \
