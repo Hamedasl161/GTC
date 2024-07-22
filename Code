@@ -96,6 +96,8 @@ sudo systemctl status chainflip-node
 
 Ctrl + c
 Ctrl + v
+echo -n "${SECRET_SEED:2}" | sudo tee /etc/chainflip/keys/signing_key_file
+
  ---------------------------------------------------- ---------------------
 tail -f /var/log/chainflip-node.log
 
