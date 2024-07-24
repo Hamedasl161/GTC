@@ -70,7 +70,7 @@ port = "8078"
 
 [state_chain]
 ws_endpoint = "ws://127.0.0.1:9944"
-signing_key_file = "/etc/chainflip/keys/signing_key_file"
+signing_key_file = "/etc/chainflip/keys/signing_key_file
 
 [eth]
 # Ethereum RPC endpoints (websocket and http for redundancy).
