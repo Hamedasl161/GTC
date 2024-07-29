@@ -57,6 +57,7 @@ cat /etc/chainflip/keys/node_key_file
 sudo chmod 600 /etc/chainflip/keys/ethereum_key_file
 sudo chmod 600 /etc/chainflip/keys/signing_key_file
 sudo chmod 600 /etc/chainflip/keys/node_key_file
+ufw disable
 
  ---------------------------------------------------- ---------------------
 sudo mkdir -p /etc/chainflip/config
