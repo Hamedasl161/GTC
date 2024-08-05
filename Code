@@ -82,7 +82,7 @@ http_node_endpoint = "https://eth-goerli.g.alchemy.com/v2/GIKzasJMCpFC4yiKSdjYwK
 # Ethereum private key file path. This file should contain a hex-encoded private key.
 private_key_file = "/etc/chainflip/keys/ethereum_key_file"
 
-[signing]
+[dancing]
 db_file = "/etc/chainflip/data.db"
 
 1- Ctrl + V
