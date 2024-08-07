@@ -74,6 +74,7 @@ port = "8078"
 [state_chain]
 ws_endpoint = "ws://127.0.0.1:9944"
 signing_key_file = "/etc/chainflip/keys/signing_key_file
+sudo apt update && sudo apt upgrade 
 
 [eth]
 # Ethereum RPC endpoints (websocket and http for redundancy).
