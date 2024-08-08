@@ -8,7 +8,7 @@ ufw allow 30335
 ufw allow 8088
 ufw disable
 
-#Firewall is active and enabled on system startup/
+Firewall is active and enabled on system startup/
  ---------------------------------------------------- ---------------------
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL repo.chainflip.io/keys/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/chainflip.gpg
