@@ -69,7 +69,7 @@ sudo nano /etc/chainflip/config/Default.toml
 [node_p2p]
 node_key_file = "/etc/chainflip/keys/node_key_file"
 ip_address="194.35.120.228"
-port = "8078"
+port = "8088"
 
 [state_chain]
 ws_endpoint = "ws://127.0.0.1:9944"
