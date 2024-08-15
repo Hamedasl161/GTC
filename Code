@@ -64,6 +64,7 @@ sudo apt update && sudo apt upgrade
  ---------------------------------------------------- ---------------------
 sudo mkdir -p /etc/chainflip/config
 sudo nano /etc/chainflip/config/Default.toml
+echo -n "${SECRET_SEED:2}" | sudo tee /etc/chainflip/keys/signing_key_file
  ---------------------------------------------------- ---------------------
 # Default configurations for the CFE
 [node_p2p]
