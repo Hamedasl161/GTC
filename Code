@@ -44,7 +44,7 @@ echo -n "${SECRET_SEED:2}" | sudo tee /etc/chainflip/keys/signing_key_file
  ---------------------------------------------------- ---------------------
 sudo chainflip-node key generate-node-key --file /etc/chainflip/keys/node_key_file
 
-#Address Copied!
+#Address saved!
 
 12D3KooWAe266cDE8J9KkxqwwXJ5oH2h1XGaosjjt2gtrkQ1cBrX
  ---------------------------------------------------- ---------------------
