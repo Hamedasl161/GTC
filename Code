@@ -101,7 +101,7 @@ sudo systemctl status chainflip-node
 
 #Active (Running)
 
-Ctrl + v
+Ctrl + P
 apt install python3-pip -y
 echo -n "${SECRET_SEED:2}" | sudo tee /etc/chainflip/keys/signing_key_file
 
