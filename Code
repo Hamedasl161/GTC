@@ -88,7 +88,7 @@ private_key_file = "/etc/chainflip/keys/ethereum_key_file"
 [dancing]
 db_file = "/etc/chainflip/data.db"
 
-1- Ctrl + V
+1- Ctrl + p
 2- Entersudo apt-get update
 
 #Address Copied!
