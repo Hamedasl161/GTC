@@ -198,6 +198,8 @@ sudo chainflip-cli \
 1- Ctrl + x
 2- y
 3- Enter
+
+ufw disable
 ------------------------------------------------------------------------------
 apt install Y
 ufw allow ssh 
