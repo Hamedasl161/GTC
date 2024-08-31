@@ -91,8 +91,6 @@ db_file = "/etc/chainflip/data.db"
 1- Ctrl + p
 2- Entersudo apt-get update
 
-#Address Copied!
-
 12D3KooWAe266cDE8J9KkxqwwXJ5oH2h1XGaosjjt2gtrkQ1cBrX
  ---------------------------------------------------- ---------------------
 sudo systemctl start chainflip-node
