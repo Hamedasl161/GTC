@@ -20,6 +20,8 @@ sudo apt-get update
 sudo apt-get install -y chainflip-cli chainflip-node chainflip-engine
  ---------------------------------------------------- ---------------------
 sudo mkdir /etc/chainflip/keys/
+
+
  ---------------------------------------------------- ---------------------
 echo -n "xxxxxxxxxxxxxx" |  sudo tee /etc/chainflip/keys/ethereum_key_file
 f474e9d12e3b5dbccb1578a9d251b0e60eff660c0ce6b29798de1bcd6c5a9ecc
