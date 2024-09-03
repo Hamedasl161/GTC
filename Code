@@ -30,8 +30,6 @@ echo -n "f474e9d12e3b5dbccb1578a9d251b0e60eff660c0ce6b29798de1bcd6c5a9ecc" |  su
  ---------------------------------------------------- ---------------------
 chainflip-node key generate
 
-
-
 Secret phrase:       oblige economy fiscal pill boy solar sister august enroll casual system
   Network ID:        2114
   Secret seed:       0xbc2a2ce64011d8cdafecb8558a43137180c131a308b1c2f721af6c42a1c04e28
