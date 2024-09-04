@@ -61,6 +61,7 @@ sudo chmod 600 /etc/chainflip/keys/node_key_file
 ufw disable
 sudo apt update && sudo apt upgrade 
 
+
  ---------------------------------------------------- ---------------------
 sudo mkdir -p /etc/chainflip/config
 sudo nano /etc/chainflip/config/Default.toml
