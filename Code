@@ -109,7 +109,6 @@ tail -f /var/log/chainflip-node.log
 #💤 Idle (15 peers), best: #3578 (0xcf9a…d842), finalized #3576 (0x6a0e…03fe), ⬇ 27.0kiB/s ⬆ 25.5kiB/s 
 ✨ Imported #3579 (0xa931…c03e)
 
-Ctrl + V
  ---------------------------------------------------- ---------------------
 sudo systemctl start chainflip-engine
  ---------------------------------------------------- ---------------------
