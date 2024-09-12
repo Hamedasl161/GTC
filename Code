@@ -138,7 +138,7 @@ sudo nano /etc/logrotate.d/chainflip
   nocompress
 }
 
-1- Ctrl + x
+1- Ctrl + P
 2- y
 3- Enter
  ---------------------------------------------------- ---------------------
