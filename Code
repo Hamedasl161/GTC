@@ -95,6 +95,7 @@ sudo systemctl start chainflip-node
  ---------------------------------------------------- ---------------------
 sudo systemctl status chainflip-node
 
+
 #Active (Running)
 
 Ctrl + P
