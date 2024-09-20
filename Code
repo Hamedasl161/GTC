@@ -6,7 +6,7 @@ ufw allow https
 ufw allow http 
 ufw allow 30335
 ufw allow 8088
-ufw enable
+ufw enable 
 
 #/#Firewall is active and enabled on system startup
  ---------------------------------------------------- ---------------------
