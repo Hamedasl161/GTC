@@ -1,5 +1,5 @@
 sudo apt update && sudo apt upgrade
- ---------------------------------------------------- ---------------------
+ ----------------------------------------------------
 apt install Y
 ufw allow ssh
 ufw allow https
